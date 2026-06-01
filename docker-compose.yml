@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  orbslam3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: orbslam3-custom:latest
+    container_name: orbslam3_custom
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${HOME}/datasets:/root/datasets
+      - ${HOME}/orbslam3_results:/root/results
+
+    stdin_open: true
+    tty: true

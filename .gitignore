@@ -1,0 +1,11 @@
+# Resultados e datasets não vão para o git
+results/
+datasets/
+*.zip
+*.tgz
+*.bag
+
+# Arquivos temporários
+__pycache__/
+*.pyc
+.DS_Store
